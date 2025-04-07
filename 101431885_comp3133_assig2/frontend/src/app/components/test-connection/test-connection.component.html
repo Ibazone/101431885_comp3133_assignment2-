@@ -1,0 +1,17 @@
+<!-- src/app/components/test-connection/test-connection.component.html -->
+<div>
+    <h2>Testing Backend Connection</h2>
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="error">Error: {{ error.message }}</div>
+    <div *ngIf="employees?.length">
+      <h3>Employees from Backend:</h3>
+      <ul>
+        <li *ngFor="let emp of employees">
+          {{ emp.first_name }} {{ emp.last_name }} - {{ emp.email }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!loading && !error && !employees?.length">
+      No employees found.
+    </div>
+  </div>
